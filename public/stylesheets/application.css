@@ -1,0 +1,38 @@
+body { background-color: #bf3034; }
+
+h1, .header p { 
+  color: #999; 
+  font-family: 'Uncial Antiqua', cursive;
+  }
+
+
+.table {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+div .header {
+  display: inline-block !important; 
+  position: relative;
+  vertical-align: top;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.centered {
+    position: absolute;
+    right: 150%;
+}
+
+span.centered {
+  color: black !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+

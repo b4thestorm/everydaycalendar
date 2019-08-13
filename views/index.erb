@@ -1,0 +1,39 @@
+<body>
+<center>
+    <div class="table">
+        <%@days.each_with_index do |months, month_index|%>
+      <div class="header">
+        <p><%= pretty_month(month_index + 1) %></p>
+          <%months.each_with_index do |_, day_index|%>
+      <div class="columns">
+        <a href="/toggle?month=<%="#{month_index}&day=#{day_index}"%>">
+        <%if session[:history][month_index][day_index]%>
+          <div class="container">
+            <span class="centered">
+              <%= "#{day_index + 1}"%>
+            </span>
+            <img src="./images/hexagons-active.png" alt="complete star" height="30" width="30">
+          </div>
+        <%else%>
+          <div class="container"> 
+            <span class="centered">
+              <%= "#{day_index + 1}"%>
+            </span>
+            <img src="./images/hexagons-unactive.png" alt="empty star" height="30" width="30">
+          </div>
+        <%end%>
+        </a>
+      </div>
+          <%end%>
+      </div>
+        <%end%>
+    </div>
+    <div>
+    </div>
+</center>
+
+<p>Day's of Practice: <%=@day_count%></p>
+<form action="/clear">
+  <button type='submit'>Clear</button>
+</form>
+</body>
